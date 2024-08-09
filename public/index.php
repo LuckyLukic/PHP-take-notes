@@ -4,9 +4,9 @@ use Core\Router;
 
 const BASE_PATH = __DIR__ . '/../';
 
-require BASE_PATH . 'Core/functions.php';
+require BASE_PATH . 'Core/functions.php'; //richiamo il file functions per accedere alle sue funzioni
 
-spl_autoload_register(function ($class) {
+spl_autoload_register(function ($class) { // registra un'autoload function per le classi PHP
 
 
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);

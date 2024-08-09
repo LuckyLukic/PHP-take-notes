@@ -31,7 +31,13 @@ class Database
 
     public function __construct($config, $username = 'root', $password = 'Infedele1980!')
     {
+
+
         $dsn = 'mysql:' . http_build_query($config, '', ';');
+        // Primo parametro ($config): L'array che contiene i parametri di configurazione.
+        //Secondo parametro (''): Questo parametro opzionale permette di specificare un prefisso per i nomi dei parametri (non è usato qui, quindi è una stringa vuota).
+        //Terzo parametro (';'): Questo parametro opzionale definisce il separatore che verrà utilizzato tra i vari parametri nella query string generata. Qui, viene utilizzato ';' (punto e virgola) come separatore, che è lo standard per la stringa DSN di MySQL.
+        //'host=localhost;port=3306;dbname=MyPhpApp;charset=utf8mb4'
 
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
